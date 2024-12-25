@@ -2,7 +2,7 @@ import os
 import yaml
 
 # Define the parent folder where all the drug folders are located
-base_folder = "/Users/flavioguzman/Brain Guides/Brain Guides/Antidepressants"
+base_folder = "/Users/flavioguzman/Documents/Flavio/01 - General"
 
 # Function to extract YAML front matter and content from a Markdown file
 def parse_markdown(file_path):
@@ -37,6 +37,9 @@ def parse_markdown(file_path):
     return yaml_data, "".join(content_lines)
 
 def process_folder(folder_path):
+    # Add debug logging
+    print(f"Processing folder: {folder_path}")
+    
     # Collect all Markdown files in the folder
     markdown_files = []
     output_filename = None
@@ -48,7 +51,11 @@ def process_folder(folder_path):
                     continue
                 markdown_files.append(os.path.join(root, file))
     
+    # Add debug logging
+    print(f"Found {len(markdown_files)} markdown files: {markdown_files}")
+    
     if not markdown_files:
+        print(f"No markdown files found in {folder_path}")
         return
     
     sections = []
@@ -90,7 +97,11 @@ def process_folder(folder_path):
         output.write(combined_file_content)
 
 # Main execution
-for drug_folder in os.listdir(base_folder):
+print(f"Looking for folders in: {base_folder}")
+folders_found = os.listdir(base_folder)
+print(f"Found folders: {folders_found}")
+
+for drug_folder in folders_found:
     drug_path = os.path.join(base_folder, drug_folder)
     if os.path.isdir(drug_path):
         process_folder(drug_path)
