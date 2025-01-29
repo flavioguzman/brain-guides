@@ -1,0 +1,16 @@
+{
+    "base_urls": {
+        "en": "https://psychopharmacologyinstitute.com",
+        "es": "https://your-site.com/es/guides",
+        "it": "https://your-site.com/it/guides"
+    },
+    "content": {
+        "local_path": "/Users/flavioguzman/Documents/Brain Guides",
+        "index_path": "/Users/flavioguzman/Documents/Brain Guides/Brain Guides/Index",
+        "github": {
+            "repository": "username/repo-name",
+            "branch": "main",
+            "content_dir": "content"
+        }
+    }
+} 

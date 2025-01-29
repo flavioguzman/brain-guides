@@ -1,0 +1,11 @@
+{
+    "target_languages": ["es", "de", "fr", "it", "pt"],
+    "batch_size": 1,
+    "max_concurrent_requests": 3,
+    "source_path": "/Users/flavioguzman/Documents/Brain Guides/Brain Guides",
+    "output_path": "/Users/flavioguzman/Documents/Brain Guides/Translations",
+    "source_directories": [
+        "Antidepressants",
+        "Articles"
+    ]
+} 

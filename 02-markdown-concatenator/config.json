@@ -1,0 +1,14 @@
+{
+    "input_folder": "/Users/flavioguzman/Documents/Brain Guides/Brain Guides/Antidepressants/Levomilnacipran",
+    "output_folder": "Website",
+    "translations": {
+        "references": {
+            "en": "References",
+            "es": "Referencias",
+            "fr": "Références",
+            "pt": "Referências",
+            "it": "Riferimenti",
+            "de": "Literatur"
+        }
+    }
+} 
