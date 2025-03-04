@@ -5,7 +5,9 @@ from pathlib import Path
 
 class MarkdownConverter:
     def __init__(self, config_path="config.json"):
+        print(f"Loading config from: {os.path.abspath(config_path)}")
         self.config = self._load_config(config_path)
+        print(f"Loaded config: {self.config}")
         self.bib_path = self.config.get("bibliography_path")
         self.csl_path = self.config.get("csl_path")
         self.input_path = self.config.get("input_path")
@@ -25,11 +27,14 @@ class MarkdownConverter:
     def _load_config(self, config_path):
         try:
             with open(config_path, 'r') as f:
-                return json.load(f)
+                config = json.load(f)
+                print(f"Successfully loaded config from {config_path}")
+                return config
         except FileNotFoundError:
+            print(f"Config file not found at {config_path}, creating default config")
             # Create default config if it doesn't exist
             default_config = {
-                "bibliography_path": "example.bib",
+                "bibliography_path": "/Users/sebastianmalleza/Desktop/Brain Guides.bib",
                 "csl_path": "ieee.csl",
                 "default_output_format": "html",
                 "input_path": "example.md"
