@@ -1,1 +1,0 @@
-When asked to write an article, create a markdown file here.
